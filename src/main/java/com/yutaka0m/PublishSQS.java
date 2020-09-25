@@ -16,7 +16,7 @@ public class PublishSQS {
         SqsClient sqsClient = SqsClient.builder()
             .credentialsProvider(DefaultCredentialsProvider.create())
             .region(Region.AP_NORTHEAST_1)
-            .endpointOverride(new URI(queueUrl)) // ElasticMQコンテナ向けのURL
+            .endpointOverride(new URI("http://localhost:9324/")) // ElasticMQコンテナ向けのURL
             .build();
 
         for (int i = 0; i < 20; i++) {
